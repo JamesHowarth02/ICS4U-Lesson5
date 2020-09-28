@@ -1,1 +1,6 @@
-# ICS4U-Lesson5
+# Unit 2 - Lesson 5 Assignments
+- Face
+- Lucky 7
+- Student
+
+By: James Howarth
