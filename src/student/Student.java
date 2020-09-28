@@ -9,22 +9,33 @@ public class Student {
         test1 = 0;
         test2 = 0;
         test3 = 0;
-        System.out.println("[CLASS] Student: A new student was created.");
     }
     
-    // Step 3) --> Create the methods
-    public void setName(String nm) {
-        String previousName = name;
-        String newName = nm;
-        name = nm;
-        System.out.println("[CLASS] Student: " + previousName + "'s name was changed to " + newName + ".");
+    public String validateData() {
+        String em = null;
+        if(name.equals("")) {
+            em = "Name is required.";
+        }else if(test1 < 0 || test1 > 100 || test2 < 0 || test3 > 100 || test3 < 0 || test3 > 100) {
+            if(em == null) {
+                em = "At least 1 mark is out of the acceptable range";
+            }else{
+                em = em +"\nAt least 1 mark is out of the acceptable range.";
+            }
+        }else if(em != null) {
+            em = em + "\nPlease re-enter all the data.\n";
+        }
+        return em;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
     }
     
     public String getName() {
         return name;
     }
     
-    public void setMark(int test, int score) {
+    public void setScore(int test, int score) {
         if(test == 1) test1 = score;
         if(test == 2) test2 = score;
         if(test == 3) test3 = score; 
