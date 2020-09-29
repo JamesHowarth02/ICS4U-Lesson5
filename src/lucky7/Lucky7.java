@@ -9,7 +9,7 @@ public class Lucky7 {
         System.out.print(inputText);
         try{
             numberInput = scan.nextInt();
-            if(numberInput>0) {
+            if(numberInput<=0) {
                 System.out.println("[!] Invalid input detected: please enter an integer greater than 0.");
                 return persistInput(inputText);
             }else{
@@ -28,6 +28,7 @@ public class Lucky7 {
         int Cash = 0, Trials = 0;
         int highscoreCash = 0, highscoreTrials = 0;
         Cash = persistInput("Enter currency amount: ");
+        highscoreCash = Cash;
         
         while(Cash>0) {
             int roll;
