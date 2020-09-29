@@ -6,7 +6,6 @@
 package face;
 
 import java.awt.Color;
-import java.util.HashSet;
 import javax.swing.JColorChooser;
 import javax.swing.JOptionPane;
 

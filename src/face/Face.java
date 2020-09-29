@@ -6,7 +6,8 @@ public class Face {
     private int xPos, yPos, diameter;
     private Color eyeColor, headColor;
     private Graphics g;
-    
+    private boolean isHappy = false;
+  
     public Face(Graphics g, int xPos, int yPos) {
         this.xPos = xPos;
         this.yPos = yPos;
@@ -38,11 +39,35 @@ public class Face {
         int my = yPos + (int) (0.65 * diameter);
         g.setColor(Color.black);
         g.drawLine(mx, my, mx + (int)(0.4 * diameter), my);
+        
+        if(isHappy) {
+            int gx = mx - (int) (diameter * 0.1);
+            int gy = yPos +(int) (diameter * 0.55);
+            g.drawLine(gx, gy, gx + (int)(0.1 * diameter), gy + (int) (diameter * 0.1));
+
+            gx = mx + (int) (diameter * 0.4);
+            gy = yPos + (int) (diameter * 0.65);
+            g.drawLine(gx, gy, gx + (int)(0.1 * diameter), gy - (int) (diameter * 0.1));
+        }else{
+            int gx = mx - (int) (diameter * 0.1);
+            int gy = yPos +(int) (diameter * 0.55);
+
+            g.drawLine(gx, gy, gx + (int)(0.1 * diameter), gy + (int) (diameter * 0.1));
+
+            gx = mx + (int) (diameter * 0.4);
+            gy = yPos + (int) (diameter * 0.65);
+            g.drawLine(gx, gy, gx + (int)(0.1 * diameter), gy - (int) (diameter * 0.1));
+        }
     }
     
     public void setColor(Color eyeColor, Color headColor) {
         this.eyeColor = eyeColor;
         this.headColor = headColor;
+    }
+    
+    public void toggleMood() {
+        this.isHappy = !isHappy;
+        draw();
     }
     
     public void setSize(int size) {
