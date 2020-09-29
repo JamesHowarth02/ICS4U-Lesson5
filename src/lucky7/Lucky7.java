@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Lucky7 {
     static Scanner scan = new Scanner(System.in);
+    
     public static int persistInput(String inputText) {
         int numberInput = 0;
         System.out.print(inputText);
@@ -27,14 +28,14 @@ public class Lucky7 {
         Dice dice2 = new Dice();
         int Cash = 0, Trials = 0;
         int highscoreCash = 0, highscoreTrials = 0;
-        Cash = persistInput("Enter currency amount: ");
-        highscoreCash = Cash;
+        Cash = persistInput("Enter currency amount: "); // Trap the user until they give us what we want.
+        highscoreCash = Cash; // Technically speaking, it is possible for the highest amount of cash to be the cash they started with.
         
         while(Cash>0) {
             int roll;
             dice1.roll();
             dice2.roll();
-            Trials = Trials + 1;
+            Trials = Trials + 1; // Could be Trials++, but it's easier to read for me when it's typed out.
             roll = dice1.getValue() + dice2.getValue();
             
             if(roll == 7) {
@@ -43,7 +44,7 @@ public class Lucky7 {
                 Cash = Cash - 1;
             }
             
-            if(Cash>highscoreCash) { 
+            if(Cash>highscoreCash) { // If the player's current cash amount at this trial is greater than highscore.
                 highscoreCash = Cash;
                 highscoreTrials = Trials;
             }
