@@ -65,6 +65,11 @@ public class FaceMaker extends javax.swing.JFrame {
         });
 
         toggleMoodButton.setText("Toggle Mood");
+        toggleMoodButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toggleMoodButtonActionPerformed(evt);
+            }
+        });
 
         changeColorButton.setText("Change Color");
         changeColorButton.addActionListener(new java.awt.event.ActionListener() {
@@ -184,6 +189,12 @@ public class FaceMaker extends javax.swing.JFrame {
         f.setColor(eyeColor, faceColor);
         f.draw();
     }//GEN-LAST:event_changeColorButtonActionPerformed
+
+    private void toggleMoodButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toggleMoodButtonActionPerformed
+        f.erase();
+        f.toggleMood();
+        f.draw();
+    }//GEN-LAST:event_toggleMoodButtonActionPerformed
    
     /**
      * @param args the command line arguments
