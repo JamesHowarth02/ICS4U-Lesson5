@@ -52,11 +52,11 @@ public class Face {
             int gx = mx - (int) (diameter * 0.1);
             int gy = yPos +(int) (diameter * 0.55);
 
-            g.drawLine(gx, gy, gx + (int)(0.1 * diameter), gy + (int) (diameter * 0.1));
+            g.drawLine(gx, gy, gx - (int)(0.1 * diameter), gy - (int) (diameter * 0.1));
 
-            gx = mx + (int) (diameter * 0.4);
-            gy = yPos + (int) (diameter * 0.65);
-            g.drawLine(gx, gy, gx + (int)(0.1 * diameter), gy - (int) (diameter * 0.1));
+            gx = -mx + (int) (diameter * 0.4);
+            gy = -yPos + (int) (diameter * 0.65);
+            g.drawLine(gx, gy, gx - (int)(0.1 * diameter), gy + (int) (diameter * 0.1));
         }
     }
     
